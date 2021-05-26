@@ -25,37 +25,4 @@ namespace StrategyPattern
 
         }
     }
-    public interface IPayment
-    {
-        void Pay(decimal amount);
-    }
-
-    public class CardPayment : IPayment
-    {
-        public void Pay(decimal amount)
-        {
-            Console.WriteLine("Paid " + amount + " by card");
-        }
-    }
-    public class CashPayment : IPayment
-    {
-        public void Pay(decimal amount)
-        {
-            Console.WriteLine("Paid " + amount + " by cash");
-        }
-    }
-
-    public class PaymentContext
-    {
-        private IPayment _payment;
-
-        public void SetPayType(IPayment payment)
-        {
-            _payment = payment;
-        }
-        public void Pay(decimal amount)
-        {
-            _payment.Pay(amount);
-        }
-    }
 }
